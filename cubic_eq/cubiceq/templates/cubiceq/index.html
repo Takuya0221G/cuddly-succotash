@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    \(ax^3+bx^2+cx+d=0\)
+    <p> \[ {{ solution }} \]</p>
+    <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ forms }}
+    <input type='submit' value="解">
+    </form>
+</body>
+</html>
